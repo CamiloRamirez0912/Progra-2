@@ -1,10 +1,6 @@
 package model;
 
 public class Calculate {
-    public void mostrarMensaje(String mensaje){
-        System.out.println(mensaje);
-    }
-
     public int takeNumber(String number) {
         String intNumber = "";
         int count = 0;
@@ -66,6 +62,4 @@ public class Calculate {
 
         return result.toString();
     }
-
-
 }

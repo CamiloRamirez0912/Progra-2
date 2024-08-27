@@ -1,10 +1,11 @@
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class CenteredButtons {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Centered Buttons Example");
+            JFrame frame = new JFrame("Centered Buttons");
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(600, 400);
             frame.setLocationRelativeTo(null);
@@ -18,13 +19,25 @@ public class CenteredButtons {
             panel.add(button1);
             panel.add(button2);
 
-            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             int buttonWidth = 100;
-            int buttonHeight = 30;
+            int buttonHeight = 40;
 
-            button1.setBounds((screenSize.width - buttonWidth) / 2, (screenSize.height / 2) - 40, buttonWidth, buttonHeight);
+            // Método para centrar los botones
+            frame.addComponentListener(new ComponentAdapter() {
+                public void componentResized(ComponentEvent e) {
+                    int frameWidth = frame.getSize().width;
+                    int frameHeight = frame.getSize().height;
 
-            button2.setBounds((screenSize.width - buttonWidth) / 2, (screenSize.height / 2) + 10, buttonWidth, buttonHeight);
+                    button1.setBounds((frameWidth - buttonWidth) / 2, (frameHeight / 2) - 40, buttonWidth, buttonHeight);
+                    button2.setBounds((frameWidth - buttonWidth) / 2, (frameHeight / 2) + 10, buttonWidth, buttonHeight);
+                }
+            });
+
+            // Posicionar los botones inicialmente
+            int frameWidth = frame.getSize().width;
+            int frameHeight = frame.getSize().height;
+            button1.setBounds((frameWidth - buttonWidth) / 2, (frameHeight / 2) - 40, buttonWidth, buttonHeight);
+            button2.setBounds((frameWidth - buttonWidth) / 2, (frameHeight / 2) + 10, buttonWidth, buttonHeight);
 
             frame.setVisible(true);
         });
