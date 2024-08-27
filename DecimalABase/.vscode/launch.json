@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "presenter.Main",
+            "projectName": "DecimalABase_3748bf47"
+        },
+        {
+            "type": "java",
+            "name": "Run Java Project",
+            "request": "launch",
+            "mainClass": "../src/presenter/Main.java",
+            "projectName": "DecimalABase",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
