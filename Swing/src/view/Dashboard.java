@@ -17,6 +17,8 @@ public class Dashboard extends JFrame {
 
     private JMenuBar menuBar;
     private JButton buttonSave;
+    private JFrame saveFrame;
+    private JFrame closeFrame;
 
     public Dashboard() {
         initComponents();
@@ -27,9 +29,6 @@ public class Dashboard extends JFrame {
         this.setBackground(Color.RED);
         setDefaultLookAndFeelDecorated(false);
         this.setLayout(null);
-        //this.setExtendedState(MAXIMIZED_BOTH);
-        //setUndecorated(true);
-        //setResizable(false);
     }
 
     private void initComponents() {
@@ -44,6 +43,12 @@ public class Dashboard extends JFrame {
         buttonSave.setSize(150, 40);
         buttonSave.setLocation(150, 50);
         buttonSave.setFont(new Font("Arial", Font.PLAIN, 17));
+        buttonSave.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openSaveWindow();
+            }
+        });
         add(buttonSave);
     }
 
@@ -53,6 +58,12 @@ public class Dashboard extends JFrame {
         button.setLocation(150, 150);
         button.setFont(new Font("Arial", Font.PLAIN, 17));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                openCloseWindow();
+            }
+        });
         add(button);
     }
 
@@ -69,7 +80,6 @@ public class Dashboard extends JFrame {
             }
         });
         add(button);
-        //tarea: cuando se de click en el botón guardar se debe abrir otra ventana, cuando se de click en salir se debe abrir otra ventana, si se vuelve a dar click no se abre una nueva porque ya está abierta
     }
 
     private void changeText(){
@@ -79,6 +89,44 @@ public class Dashboard extends JFrame {
                 JButton aux = (JButton)comp[i];
                 aux.setText(aux.getText().toUpperCase());
             }
+        }
+    }
+
+    private void openSaveWindow() {
+        if (saveFrame == null) {
+            saveFrame = new JFrame("Save Window");
+            saveFrame.setSize(300, 200);
+            saveFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            saveFrame.setLocationRelativeTo(this);
+            saveFrame.setVisible(true);
+
+            saveFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    saveFrame = null;
+                }
+            });
+        } else {
+            saveFrame.toFront();
+        }
+    }
+
+    private void openCloseWindow() {
+        if (closeFrame == null) {
+            closeFrame = new JFrame("Close Window");
+            closeFrame.setSize(300, 200);
+            closeFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            closeFrame.setLocationRelativeTo(this);
+            closeFrame.setVisible(true);
+
+            closeFrame.addWindowListener(new java.awt.event.WindowAdapter() {
+                @Override
+                public void windowClosing(java.awt.event.WindowEvent windowEvent) {
+                    closeFrame = null;
+                }
+            });
+        } else {
+            closeFrame.toFront();
         }
     }
 
