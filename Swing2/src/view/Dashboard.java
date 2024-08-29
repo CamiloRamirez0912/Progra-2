@@ -27,4 +27,6 @@ public class Dashboard extends JFrame{
         add(button);
     }
     //hacer la ventana de inicio de word, al presionar "Abrir Otros Documentos que desplegue menus, hacer los paneles, al presionar "Documento en blanco" sale una ventana en blanco mismos colores"
+
+    //tarea 2: mantener los botones centrados del proyecto de clase
 }
