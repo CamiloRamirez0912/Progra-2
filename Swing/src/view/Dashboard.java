@@ -82,11 +82,11 @@ public class Dashboard extends JFrame {
         add(button);
     }
 
-    private void changeText(){
+    private void changeText() {
         Component comp[] = getContentPane().getComponents();
         for (int i = 0; i < comp.length; i++) {
-            if(comp[i].getClass().getSimpleName().equals("JButton")){
-                JButton aux = (JButton)comp[i];
+            if (comp[i].getClass().getSimpleName().equals("JButton")) {
+                JButton aux = (JButton) comp[i];
                 aux.setText(aux.getText().toUpperCase());
             }
         }
@@ -139,19 +139,19 @@ public class Dashboard extends JFrame {
 
     private void addMenuOne() {
         JMenu menu = new JMenu("One");
-        menu.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        menu.setFont(new Font("Arial", Font.PLAIN, 18));
         menuBar.add(menu);
 
         JMenuItem item = new JMenuItem("Option 1");
-        item.setFont(new Font("Arial", Font.PLAIN, 16)); 
+        item.setFont(new Font("Arial", Font.PLAIN, 16));
         menu.add(item);
     }
 
     private void addMenuTwo() {
         JMenu menu = new JMenu("Two");
-        menu.setFont(new Font("Arial", Font.PLAIN, 18)); 
+        menu.setFont(new Font("Arial", Font.PLAIN, 18));
         menuBar.add(menu);
-        
+
         JMenuItem item = new JMenuItem("Option 2");
         item.setFont(new Font("Arial", Font.PLAIN, 16));
         menu.add(item);
