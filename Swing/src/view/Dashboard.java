@@ -1,17 +1,8 @@
 package view;
 
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Cursor;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Dashboard extends JFrame {
 
@@ -26,8 +17,8 @@ public class Dashboard extends JFrame {
         this.setSize(500, 400);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setBackground(Color.RED);
-        setDefaultLookAndFeelDecorated(false);
+        this.getContentPane().setBackground(Color.RED);
+        setDefaultLookAndFeelDecorated(true);
         this.setLayout(null);
     }
 
