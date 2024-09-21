@@ -32,3 +32,9 @@ The `JAVA PROJECTS` view allows you to manage your dependencies. More details ca
 <a href="https://www.flaticon.es/iconos-gratis/lista" title="lista iconos">Lista iconos creados por Kiranshastry - Flaticon</a>
 
 <a href="https://www.flaticon.es/iconos-gratis/calendario" title="calendario iconos">Calendario iconos creados por Elzicon - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/settings" title="settings icons">Settings icons created by srip - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/logout" title="logout icons">Logout icons created by Pixel perfect - Flaticon</a>
+
+Foto de ATBO: https://www.pexels.com/es-es/foto/mesa-redonda-de-madera-negra-con-4-sillas-245240/

@@ -4,14 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class BackgroundPanel extends JPanel {
-    private Image backgroundImage;
+    protected Image backgroundImage;
 
     public BackgroundPanel() {
         backgroundImage = new ImageIcon("src/assets/office.jpg").getImage();
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(backgroundImage, 0, 0, this.getWidth(), this.getHeight(), this);
     }

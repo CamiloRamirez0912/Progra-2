@@ -5,8 +5,11 @@ import java.awt.*;
 
 public class MainWindow extends JFrame {
     private ImageIcon icon = new ImageIcon("src/assets/icon.png");
-    private SidePanel side;
+    private SidePanel sidePanel;
+    private MainPanel mainPanel;
     private BackgroundPanel backgroundPanel;
+    private MyDay day;
+    private Important imp;
 
     public MainWindow() {
         initComponents();
@@ -15,19 +18,31 @@ public class MainWindow extends JFrame {
 
         this.setTitle("To Do List");
         this.setSize(800, 800);
-        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         backgroundPanel = new BackgroundPanel();
         backgroundPanel.setLayout(new BorderLayout());
 
-        side = new SidePanel();
-        backgroundPanel.add(side, BorderLayout.WEST);
+        sidePanel = new SidePanel();
+        mainPanel = new MainPanel();
+        day = new MyDay();
+        imp = new Important();
 
-        this.setContentPane(backgroundPanel);
+        mainPanel.addPanel(day, "miDia");
+        mainPanel.addPanel(imp, "Importantes");
+
+        sidePanel.addMiDiaButtonListener(e -> mainPanel.showPanel("miDia"));
+        sidePanel.addImpBtnListener(e -> mainPanel.showPanel("Importantes"));
+
+        backgroundPanel.add(sidePanel, BorderLayout.WEST);
+        backgroundPanel.add(mainPanel, BorderLayout.CENTER);
+
+        add(backgroundPanel);
     }
 
     private void initComponents() {
+        // Inicialización de componentes si es necesario
     }
 }

@@ -2,12 +2,15 @@ package views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class SidePanel extends JPanel {
     private Font font;
     private JPanel userSection;
     private JPanel optionsSection;
     private JPanel settingsSection;
+    private JButton dayBtn;
+    private JButton impButton;
 
     public SidePanel() {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
@@ -28,15 +31,15 @@ public class SidePanel extends JPanel {
         userSection.setBackground(new Color(0xeeeeee));
 
         JLabel data = new JLabel();
-        ImageIcon userIcon = new ImageIcon("src/assets/user.png");
+        ImageIcon userIcon = new ImageIcon("src/assets/user2.jpg");
         Image userImage = userIcon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
         data.setText("Nombre Usuario");
         data.setIcon(new ImageIcon(userImage));
         data.setFont(font);
-        
-        userSection.add(Box.createVerticalStrut(20)); //gap entre el borde superior y el label
+
+        userSection.add(Box.createVerticalStrut(20)); // gap entre el borde superior y el label
         userSection.add(data);
-        userSection.add(Box.createVerticalStrut(20)); //gap entre el label y el separador
+        userSection.add(Box.createVerticalStrut(20)); // gap entre el label y el separador
 
         add(userSection);
     }
@@ -47,12 +50,18 @@ public class SidePanel extends JPanel {
         optionsSection.setBackground(new Color(0xeeeeee));
 
         String[] options = { "Mi día", "Importantes", "Terminadas", "Planeadas" };
-        String[] paths = {"src/assets/sun.png", "src/assets/star.png", "src/assets/list.png", "src/assets/calendar.png"};
-        for (int i=0; i<options.length; i++) {
+        String[] paths = { "src/assets/sun.png", "src/assets/star.png", "src/assets/list.png",
+                "src/assets/calendar.png" };
+        for (int i = 0; i < options.length; i++) {
             ImageIcon btnIcon = new ImageIcon(paths[i]);
             Image btnImage = btnIcon.getImage().getScaledInstance(19, 19, Image.SCALE_SMOOTH);
             JButton button = createStyledButton(options[i]);
             button.setIcon(new ImageIcon(btnImage));
+            if(options[i].equals("Mi día")){
+                dayBtn = button;
+            }else if (options[i].equals("Importantes")) {
+                impButton = button;
+            }
             optionsSection.add(button);
             optionsSection.add(Box.createVerticalStrut(8));
         }
@@ -60,17 +69,29 @@ public class SidePanel extends JPanel {
         add(optionsSection);
     }
 
+    public void addMiDiaButtonListener(ActionListener listener) {
+        dayBtn.addActionListener(listener);
+    }
+
+    public void addImpBtnListener(ActionListener listener){
+        impButton.addActionListener(listener);
+    }
+
     private void createSettingsSection() {
         settingsSection = new JPanel();
         settingsSection.setLayout(new BoxLayout(settingsSection, BoxLayout.Y_AXIS));
         settingsSection.setBackground(new Color(0xeeeeee));
 
-        JButton configButton = createStyledButton("Configuración");
-        JButton exitButton = createStyledButton("Salir");
-
-        settingsSection.add(configButton);
-        settingsSection.add(Box.createVerticalStrut(10));
-        settingsSection.add(exitButton);
+        String[] options = { "Configuración", "Salir" };
+        String[] paths = { "src/assets/config.png", "src/assets/exit.png" };
+        for (int i = 0; i < options.length; i++) {
+            ImageIcon btnIcon = new ImageIcon(paths[i]);
+            Image btnImage = btnIcon.getImage().getScaledInstance(19, 19, Image.SCALE_SMOOTH);
+            JButton button = createStyledButton(options[i]);
+            button.setIcon(new ImageIcon(btnImage));
+            settingsSection.add(button);
+            settingsSection.add(Box.createVerticalStrut(8));
+        }
 
         add(settingsSection);
     }
