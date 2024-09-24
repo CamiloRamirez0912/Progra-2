@@ -2,15 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="561f82a5-317b-4afe-ac0b-94ac88c22810" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/assets/office.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/assets/office.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/presenter/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/presenter/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/views/BackgroundPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/views/BackgroundPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/views/Important.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/views/Important.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/views/MainPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/views/MainPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/views/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/views/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/views/MyDay.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/views/MyDay.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ToDoListGUI/bin/views/SidePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/bin/views/SidePanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/src/assets/office.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/src/assets/office.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/src/views/BackgroundPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/src/views/BackgroundPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/src/views/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/src/views/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ToDoListGUI/src/views/SidePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ToDoListGUI/src/views/SidePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,9 +18,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2mODYGq9H96ou9JrqyJwOEQn5MX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,6 +31,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Camilo Ramirez/Documents/Progra-2/ToDoListGUI",
     "onboarding.tips.debug.path": "C:/Users/Camilo Ramirez/Documents/Progra-2/PruebaSwing/src/Main.java"
   }
 }]]></component>
