@@ -11,7 +11,7 @@ public class MyDay extends JPanel {
     private JPanel tasksPanel;
 
     public MyDay() {
-        setLayout(new BorderLayout(28, 0));
+        setLayout(new BorderLayout());
         setOpaque(false);
 
         JPanel topSpace = new JPanel();
