@@ -1,0 +1,16 @@
+Javier,Perez,20,1500000
+Carlos,Martinez,31,3500000
+Andress,Niño,21,1600000
+Felipe,Fonseca,18,1900000
+Javier,Perez,20,1500000
+Carlos,Martinez,31,3500000
+Andress,Niño,21,1600000
+Felipe,Fonseca,18,1900000
+Javier,Perez,20,1500000
+Carlos,Martinez,31,3500000
+Andress,Niño,21,1600000
+Felipe,Fonseca,18,1900000
+Javier,Perez,20,1500000
+Carlos,Martinez,31,3500000
+Andress,Niño,21,1600000
+Felipe,Fonseca,18,1900000
