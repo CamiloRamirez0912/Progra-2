@@ -1,0 +1,3 @@
+Camilo,Ramirez,21,1500,1002365619
+David,Ramirez,16,1000,1050608628    
+Zulma,Salas,50,2000,40037379
