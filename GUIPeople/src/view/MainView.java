@@ -8,10 +8,14 @@ import javax.swing.BoxLayout;
 import javax.swing.JOptionPane;
 
 import java.awt.Dimension;
+import java.util.Locale;
 
 import interfaces.ViewInterface;
+import presenter.Presenter;
 
 public class MainView extends JFrame implements ViewInterface {
+    private final String RESOURCE_LANGAGE = "resources.mainViewV1Message";
+    private Presenter presenter;
     private JPanel panel;
     private JButton addButton;
     private JButton showButton;
@@ -20,6 +24,7 @@ public class MainView extends JFrame implements ViewInterface {
     private JButton englishButton;
 
     public MainView() {
+        presenter = new Presenter();
         setTitle("Gestión de Personas");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -106,15 +111,6 @@ public class MainView extends JFrame implements ViewInterface {
         search.setVisible(true);
     }
 
-    // Métodos para cambiar el idioma
-    private void changeLanguageToSpanish() {
-        showAcceptMessage("Idioma cambiado a Español.");
-    }
-
-    private void changeLanguageToEnglish() {
-        showAcceptMessage("Language changed to English.");
-    }
-
     @Override
     public void showErrorMessage(String message) {
         JOptionPane.showMessageDialog(this, message, "Error", JOptionPane.ERROR_MESSAGE);
@@ -123,5 +119,29 @@ public class MainView extends JFrame implements ViewInterface {
     @Override
     public void showAcceptMessage(String message) {
         JOptionPane.showMessageDialog(this, message, "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    private void changeLanguageToSpanish() {
+    presenter.changeLanguaje(new Locale("es", "CO"));
+    updateTextLanguage();
+}
+
+private void changeLanguageToEnglish() {
+    presenter.changeLanguaje(new Locale("en", "US"));
+    updateTextLanguage();
+}
+
+private void updateTextLanguage() {
+    setTitle(presenter.getLanguajeMessage("main_view.title"));
+    addButton.setText(presenter.getLanguajeMessage("main_view.add_button"));
+    showButton.setText(presenter.getLanguajeMessage("main_view.show_button"));
+    searchButton.setText(presenter.getLanguajeMessage("main_view.search_button"));
+    spanishButton.setText(presenter.getLanguajeMessage("main_view.spanish_button"));
+    englishButton.setText(presenter.getLanguajeMessage("main_view.english_button"));
+}
+
+    @Override
+    public String getResourceLangage() {
+        return RESOURCE_LANGAGE;
     }
 }

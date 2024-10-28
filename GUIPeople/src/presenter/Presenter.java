@@ -6,14 +6,19 @@ import model.Person;
 import view.MainView;
 
 import java.util.List;
+import java.util.Locale;
+
+import helpers.InternationalizationManager;
 
 public class Presenter implements PresenterInterface {
     private MainView view;
     private File fileModel;
+    private InternationalizationManager langManager;
 
     public Presenter() {
         this.view = new MainView();
         this.fileModel = new File();
+        langManager = new InternationalizationManager(this.view.getResourceLangage());
     }
 
     public void run() {
@@ -55,5 +60,15 @@ public class Presenter implements PresenterInterface {
         } else {
             view.showErrorMessage("La persona con la cédula " + id + " no fue encontrada");
         }
+    }
+
+    @Override
+    public void changeLanguaje(Locale locale) {
+        langManager.changeLanguage(locale);
+    }
+
+    @Override
+    public String getLanguajeMessage(String key) {
+        return langManager.getResourceBundle().getString(key);
     }
 }
