@@ -14,24 +14,24 @@ import javax.swing.JTextField;
 
 import presenter.Presenter;
 
-
-
 public class AddPersonDialog extends JDialog {
     private JTextField nameField, lastNameField, ageField, salaryField, idField;
     private JButton addButton;
     private JPanel panel;
     private GridBagConstraints gbc;
     private Presenter presenter;
+    private MainView view;
 
     public AddPersonDialog(JFrame parent) {
-    super(parent, "Agregar Persona", true);
-    setSize(600, 400);
-    presenter = new Presenter();
-    setLocationRelativeTo(getParent());
-    initComponents();
-    setEvent();
-    pack();
-}
+        super(parent, "Agregar Persona", true);
+        setSize(600, 400);
+        view = new MainView();
+        presenter = new Presenter(view);
+        setLocationRelativeTo(getParent());
+        initComponents();
+        setEvent();
+        pack();
+    }
 
     private void initComponents() {
         add(createMainPanel());
@@ -98,13 +98,14 @@ public class AddPersonDialog extends JDialog {
         panel.add(button, gbc);
     }
 
-    private void setEvent(){
+    private void setEvent() {
         addButton.addActionListener(e -> addPerson());
     }
 
     private void addPerson() {
-        if(presenter.addPerson(nameField.getText(), lastNameField.getText(), ageField.getText(), salaryField.getText(), idField.getText()))
-            dispose();        
+        if (presenter.addPerson(nameField.getText(), lastNameField.getText(), ageField.getText(), salaryField.getText(),
+                idField.getText()))
+            dispose();
     }
 
 }

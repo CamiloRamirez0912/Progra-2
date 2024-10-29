@@ -14,7 +14,7 @@ import interfaces.ViewInterface;
 import presenter.Presenter;
 
 public class MainView extends JFrame implements ViewInterface {
-    private final String RESOURCE_LANGAGE = "resources.mainViewV1Message";
+    private final String RESOURCE_LANGAGE = "resources.viewMessages";
     private Presenter presenter;
     private JPanel panel;
     private JButton addButton;
@@ -24,7 +24,7 @@ public class MainView extends JFrame implements ViewInterface {
     private JButton englishButton;
 
     public MainView() {
-        presenter = new Presenter();
+        presenter = new Presenter(this);
         setTitle("Gestión de Personas");
         setSize(600, 400);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -121,24 +121,26 @@ public class MainView extends JFrame implements ViewInterface {
         JOptionPane.showMessageDialog(this, message, "Aceptado", JOptionPane.INFORMATION_MESSAGE);
     }
 
+    @SuppressWarnings("deprecation")
     private void changeLanguageToSpanish() {
-    presenter.changeLanguaje(new Locale("es", "CO"));
-    updateTextLanguage();
-}
+        presenter.changeLanguaje(new Locale("es", "CO"));
+        updateTextLanguage();
+    }
 
-private void changeLanguageToEnglish() {
-    presenter.changeLanguaje(new Locale("en", "US"));
-    updateTextLanguage();
-}
+    @SuppressWarnings("deprecation")
+    private void changeLanguageToEnglish() {
+        presenter.changeLanguaje(new Locale("en", "US"));
+        updateTextLanguage();
+    }
 
-private void updateTextLanguage() {
-    setTitle(presenter.getLanguajeMessage("main_view.title"));
-    addButton.setText(presenter.getLanguajeMessage("main_view.add_button"));
-    showButton.setText(presenter.getLanguajeMessage("main_view.show_button"));
-    searchButton.setText(presenter.getLanguajeMessage("main_view.search_button"));
-    spanishButton.setText(presenter.getLanguajeMessage("main_view.spanish_button"));
-    englishButton.setText(presenter.getLanguajeMessage("main_view.english_button"));
-}
+    private void updateTextLanguage() {
+        setTitle(presenter.getLanguajeMessage("main_view.title"));
+        addButton.setText(presenter.getLanguajeMessage("main_view.add_button"));
+        showButton.setText(presenter.getLanguajeMessage("main_view.show_button"));
+        searchButton.setText(presenter.getLanguajeMessage("main_view.search_button"));
+        spanishButton.setText(presenter.getLanguajeMessage("main_view.spanish_button"));
+        englishButton.setText(presenter.getLanguajeMessage("main_view.english_button"));
+    }
 
     @Override
     public String getResourceLangage() {

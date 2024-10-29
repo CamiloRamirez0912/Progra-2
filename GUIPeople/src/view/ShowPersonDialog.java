@@ -19,11 +19,13 @@ public class ShowPersonDialog extends JDialog {
     private JPanel panel;
     private GridBagConstraints gbc;
     private Presenter presenter;
+    private MainView view;
 
     public ShowPersonDialog(JFrame parent) {
         super(parent, "Mostrar Información", true);
         setSize(500, 400);
-        presenter = new Presenter();
+        view = new MainView();
+        presenter = new Presenter(view);
         setLocationRelativeTo(getParent());
         initComponents();
         setupActionListener();
@@ -82,7 +84,7 @@ public class ShowPersonDialog extends JDialog {
         panel.add(button, gbc);
     }
 
-    private void setupActionListener(){
+    private void setupActionListener() {
         closeButton.addActionListener(e -> setVisible(false));
     }
 }

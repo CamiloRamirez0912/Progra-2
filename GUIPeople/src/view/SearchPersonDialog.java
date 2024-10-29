@@ -15,7 +15,7 @@ import java.awt.Insets;
 
 import presenter.Presenter;
 
-public class SearchPersonDialog extends JDialog{
+public class SearchPersonDialog extends JDialog {
     private JTextField idField;
     private JButton searchButton;
     private JButton closeButton;
@@ -23,7 +23,8 @@ public class SearchPersonDialog extends JDialog{
 
     public SearchPersonDialog(JFrame parent, MainView view) {
         super(parent, "Buscar Persona", true);
-        presenter = new Presenter();
+        view = new MainView();
+        presenter = new Presenter(view);
         setSize(400, 200);
         setLocationRelativeTo(parent);
         initComponents();
@@ -82,7 +83,7 @@ public class SearchPersonDialog extends JDialog{
         closeButton.addActionListener(e -> dispose());
     }
 
-    private void searchPerson(){
+    private void searchPerson() {
         presenter.searchPersonById(idField.getText());
     }
 }

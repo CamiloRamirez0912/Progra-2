@@ -20,4 +20,7 @@ public class InternationalizationManager {
         return resourceBundle;
     }
 
+    public Locale getLocale() {
+        return getLocale();
+    }
 }
